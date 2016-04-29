@@ -10,11 +10,16 @@ def main():
     parser.add_argument('thread', help='url of the thread')
     parser.add_argument('folder', nargs='?',
                         help='Change the folder name where images are downloaded')
+    parser.add_argument("-i", "--imageboard",
+                        help="choose the imageboard you from to download from."
+                        " Default to 4chan")
     parser.add_argument("-q", "--quiet", action='store_true', help="quiet")
     parser.add_argument("-o", "--output", help="Specify output folder")
     args = parser.parse_args()
 
     print(args.thread)
+    thread_nb = str(args.thread.split('/')[5].split('.')[0])
+    board = str(args.thread.split('/')[3])
 
     quiet = False
     if args.quiet:
@@ -23,7 +28,7 @@ def main():
     if args.folder is not None:
         folder = ''.join(args.folder)
     else:
-        folder = ''.join(args.thread).split('/')[5].split('#')[0]
+        folder = thread_nb
 
     if args.output is not None:
         output = args.output
@@ -33,7 +38,12 @@ def main():
     else:
         output = os.getcwd()
 
-    download.download_thread(args.thread, output, folder, quiet)
+    if args.imageboard:
+        chan = args.imageboard
+    else:
+        chan = "4chan"
+
+    download.download_thread(thread_nb, board, chan, output, folder, quiet)
 
 
 if __name__ == '__main__':

@@ -1,19 +1,22 @@
 {"searches":[
     {
+      "imageboard":"IMAGEBOARD",
       "folder_name":"YOUR_FOLDER_NAME",
       "board": "BOARD_LETTER",
       "keywords": ["KEYWORD1", "KEYWORD2"]
     },
 
     {
+      "imageboard":"4chan",
       "folder_name":"vidya",
       "board": "vg",
       "keywords": ["tf2", "splatoon", "world of warcraft"]
     },
 
     {
+      "imageboard":"lainchan",
       "folder_name":"desktop_thread",
-      "board": "g",
+      "board": "tech",
       "keywords": ["desktop", "KEYWORD2"]
     }
 

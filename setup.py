@@ -12,7 +12,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='4scanner',
-    version='1.0.7',
+    version='1.1.0',
     description='4chan threads scanner',
     long_description=long_description,
     url='https://github.com/Lacsap-/4scanner',
